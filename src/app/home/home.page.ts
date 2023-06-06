@@ -85,5 +85,4 @@ export class HomePage {
 
     return ergebnisArray;
   }
-
 }
