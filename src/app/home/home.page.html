@@ -1,20 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Lottozahlen-Generator für "6 aus 49"
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button expand="block" color="success" (click)="onLottozahlenErzeugen()">
+    Lottozahlen erzeugen
+  </ion-button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  &nbsp;
+
+  <ion-grid>
+    <ion-row *ngFor="let nummerZeile of nullBisSechs">
+      <ion-col *ngFor="let nummerSpalte of nullBisSechs" [style.background]="hintergrundFarbeArray[nummerZeile*7 + nummerSpalte + 1]">
+        {{nummerZeile*7 + nummerSpalte + 1}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
